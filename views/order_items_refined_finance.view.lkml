@@ -1,8 +1,9 @@
 view: +order_items {
   
-  # This refines the auto-generated order_items view, adding the description below to order_id
+  # This refines the hub order_items view, adding the following dimension specifically for the finance team
   
-  dimension: order_id {
-    description: "The source ID from our sales system"
+  dimension: profit_per_unit {
+    type: sum
+    sql: ${TABLE}.id ;;
   }
 }
